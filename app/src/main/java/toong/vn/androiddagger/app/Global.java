@@ -1,15 +1,15 @@
 package toong.vn.androiddagger.app;
 
-import android.app.Application;
+import android.support.multidex.MultiDexApplication;
 
-public class Global extends Application {
+public class Global extends MultiDexApplication {
 
     protected AppComponent appComponent;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        appComponent = DaggerAppComponent.builder().appModule(new AppModule()).build();
+        appComponent = DaggerAppComponent.builder().appModule(new AppModule(this)).build();
         appComponent.inject(this);
     }
 

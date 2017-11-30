@@ -2,7 +2,6 @@ package toong.vn.androiddagger.app;
 
 import dagger.Component;
 import javax.inject.Singleton;
-import toong.vn.androiddagger.SoundsRepository;
 import toong.vn.androiddagger.screen.second.SecondActivity;
 import toong.vn.androiddagger.screen.third.ThirdActivity;
 
@@ -15,6 +14,4 @@ public interface AppComponent {
     void inject(SecondActivity secondActivity);
 
     void inject(ThirdActivity thirdActivity);
-
-    SoundsRepository getSoundsRepository();
 }

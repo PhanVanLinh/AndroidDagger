@@ -13,9 +13,6 @@ import toong.vn.androiddagger.screen.third.ThirdActivity;
 
 public class SecondActivity extends AppCompatActivity {
 
-//    @Inject
-//    Book mBook;
-
     @Inject
     SoundsRepository mSoundsRepository;
 
@@ -23,15 +20,10 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-//        DaggerSecondComponent.builder()
-//                .appComponent(((Global)getApplication()).getComponent())
-//                .secondModule(new SecondModule(this))
-//                .build()
-//                .inject(this);
-
         ((Global)getApplication()).getComponent().inject(this);
 
         Log.i("TAG", "" + mSoundsRepository.getText());
+        Log.i("TAG", "test");
 
         findViewById(R.id.start_third_activity).setOnClickListener(new View.OnClickListener() {
             @Override

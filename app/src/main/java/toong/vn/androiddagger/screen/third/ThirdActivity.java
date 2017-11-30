@@ -18,14 +18,9 @@ public class ThirdActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
 
-//        DaggerThirdComponent.builder()
-//                .appComponent(((Global) getApplication()).getComponent())
-//                .thirdModule(new ThirdModule(this))
-//                .build()
-//                .inject(this);
-
         ((Global)getApplication()).getComponent().inject(this);
 
         Log.i("TAG", "" + mSoundsRepository.getText());
+        Log.i("TAG", "test");
     }
 }
